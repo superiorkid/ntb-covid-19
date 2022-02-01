@@ -3,9 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap 4 Responsive Layout</title>
+<title>NTB Covid Trackers</title>
 
-  <!-- {{ bootstrap.load_css() }} -->
   <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
   <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
   <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
@@ -14,25 +13,56 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a href="#" class="navbar-brand">NTB covid trackers</a>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav">
-                <a href="#" class="nav-item nav-link active">Home</a>
-                <a href="#" class="nav-item nav-link">Services</a>
-                <a href="#" class="nav-item nav-link">About</a>
-              	<a href="#" class="nav-item nav-link">Contact</a>
-            </div>
-        </div>
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">NTB Covid Trackers</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('main.index') }}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
     </div>
+  </nav> -->
+
+  <header style="background: #4C3571;padding:50px 0;">
+    <div class="container">
+      <h1 style="color: #fff;">Information Center Covid19 NTB</h1>
+    </div>
+  </header>
+  
+  <div class="container">
+  <nav class="navbar navbar-expand-sm">
+  
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('main.index')}}">
+              Home
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+              About
+            </a>
+        </li>
+    </ul>
 </nav>
+</div>
 
 <div class="container">
-  	<div class="p-5 my-4 bg-light rounded-3">
+  	<div class="p-5 my-4 rounded-3">
         <h1>Covid-19 / Coronavirus Disease 2019</h1>
         <p class="lead">adalah penyakit akibat infeksi virus severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). COVID-19 dapat menyebabkan gangguan sistem pernapasan, mulai dari gejala yang ringan seperti flu, hingga infeksi paru-paru, seperti pneumonia.</p>
     </div>
@@ -46,7 +76,7 @@
             <div class="card-body">
               <div class="media d-flex">
                 <div class="media-body text-left">
-                  <h3 class="danger">27864</h3>
+                  <h3 class="danger">{{ total_kasus.get('total') }}</h3>
                   <span>Total Kasus</span>
                 </div>
                 <div class="align-self-center">
@@ -65,7 +95,7 @@
             <div class="card-body">
               <div class="media d-flex">
                 <div class="media-body text-left">
-                  <h3 class="success">26881</h3>
+                  <h3 class="success">{{ total_kasus.get('sembuh')}}</h3>
                   <span>Sembuh</span>
                 </div>
                 <div class="align-self-center">
@@ -84,7 +114,7 @@
             <div class="card-body">
               <div class="media d-flex">
                 <div class="media-body text-left">
-                  <h3 class="warning">917</h3>
+                  <h3 class="warning">{{ total_kasus.get('meninggal') }}</h3>
                   <span>Meninggal</span>
                 </div>
                 <div class="align-self-center">
@@ -103,7 +133,7 @@
             <div class="card-body">
               <div class="media d-flex">
                 <div class="media-body text-left">
-                  <h3 class="primary">66</h3>
+                  <h3 class="primary">{{ total_kasus.get('masih_isolasi') }}</h3>
                   <span>Masih Isolasi</span>
                 </div>
                 <div class="align-self-center">
@@ -119,7 +149,10 @@
     {% block content %}
       
     {% endblock content %}
-      
+    
+    <div class="alert alert-warning justify-content-end" role="alert">
+      <p>Update:  {{ data.get('update_terakhir') }} WITA</p>
+    </div>      
 
     <hr>
     <footer>
@@ -130,6 +163,12 @@
         </div>
     </footer>
 </div>
-
+<script>
+  $('.nav-item').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+});
+</script>
 </body>
 </html>
