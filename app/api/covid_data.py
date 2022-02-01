@@ -1,10 +1,12 @@
 import requests
 
-BASE_URL = 'http://apicovid19indonesia-v2.vercel.app/api'
+endpoint = 'https://kipi.covid19.go.id/api/get-city'
 
+files = {
+  'start_id': ('BALI')
+}
 
-def total_cases():
-  url = BASE_URL + '/indonesia'
-  response = requests.get(url)
-  data = response.json()
-  return data
+def covid_data():
+  resp = requests.post(endpoint, files)
+  return resp
+
