@@ -1,53 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documents</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap 4 Responsive Layout</title>
 
-  <!-- style -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- {{ bootstrap.load_css() }} -->
+  <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+  <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+  <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+  <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+
+
 </head>
 <body>
-  
-  <h1>Responsive Two Column Layout (Left Column Fluid)</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand">NTB covid trackers</a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link">Services</a>
+                <a href="#" class="nav-item nav-link">About</a>
+              	<a href="#" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+  	<div class="p-5 my-4 bg-light rounded-3">
+        <h1>Covid-19 / Coronavirus Disease 2019</h1>
+        <p class="lead">adalah penyakit akibat infeksi virus severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). COVID-19 dapat menyebabkan gangguan sistem pernapasan, mulai dari gejala yang ringan seperti flu, hingga infeksi paru-paru, seperti pneumonia.</p>
+    </div>
+
+    <div class="row">
+
+      <!-- Total Kasus -->
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="media-body text-left">
+                  <h3 class="danger">27864</h3>
+                  <span>Total Kasus</span>
+                </div>
+                <div class="align-self-center">
+                  <i class="icon-user success font-large-2 float-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sembuh -->
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="media-body text-left">
+                  <h3 class="success">26881</h3>
+                  <span>Sembuh</span>
+                </div>
+                <div class="align-self-center">
+                  <i class="icon-plus danger font-large-2 float-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- meninggal -->
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="media-body text-left">
+                  <h3 class="warning">917</h3>
+                  <span>Meninggal</span>
+                </div>
+                <div class="align-self-center">
+                  <i class="icon-graph warning font-large-2 float-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Isolasi -->
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="media-body text-left">
+                  <h3 class="primary">66</h3>
+                  <span>Masih Isolasi</span>
+                </div>
+                <div class="align-self-center">
+                  <i class="icon-support primary font-large-2 float-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
     
-  <header>
-     <nav>
-        <ul class="nav inline-items">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Photos</a></li>
-          <li><a href="#">My Trips</a></li>
-       </ul>
-    </nav>
-  </header>
-
-  <div class="columnsContainer">
-
-    <div class="leftColumn">
+    {% block content %}
       
+    {% endblock content %}
       
-      {% block content %}
-        
-      {% endblock content %}
-        
 
-    </div>
-
-    <div class="rightColumn">
-      <h2>Right Column</h2>
-
-      <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris.</p>
-    </div>
-
-  </div>
-  
-  <footer>
-    <p><a href="#">Contact Us</a> | <a href="#">Sitemap</a> | <a href="#">Privacy Policy</a></p>
-    <p>&copy;2014 Copyright info here...</p>
-  </footer>
+    <hr>
+    <footer>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Copyright ©2021</p>
+            </div>
+        </div>
+    </footer>
+</div>
 
 </body>
 </html>
