@@ -18,3 +18,18 @@ def total_kasus():
   }
 
   return total
+
+
+def kasus_per_kabupaten():
+  data = get_data()
+
+  temp_nama_kabupaten = list()
+  temp_data_kabupaten = list()
+
+  for k, v in data.get('data_per_kabupaten').items():
+    temp_nama_kabupaten.append(k.replace('_', ' ').capitalize())
+    temp_data_kabupaten.append(list(v.get('konfirmasi').values()))
+
+  kombinasi_data = dict(zip(temp_nama_kabupaten, temp_data_kabupaten))
+
+  return kombinasi_data
