@@ -1,4 +1,4 @@
-#!/home/superiorkid/Project/indonesia-covid-tracker/venv/bin/python
+#!/home/superiorkid/Project/ntb-covid-information/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
