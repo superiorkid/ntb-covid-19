@@ -5,7 +5,7 @@ from ..covid_content.news_update import get_news
 import feedparser
 
 RSS_FEEDS = {
-  'republika': 'http://www.republika.co.id/rss'
+  'indo_gov': 'https://covid19.go.id/feed/berita'
 }
 
 @main.route('/')
@@ -14,7 +14,7 @@ def index():
 
 @main.route('/news')
 def news():
-  news_update = get_news(RSS_FEEDS['republika'])
+  news_update = get_news(RSS_FEEDS['indo_gov'])
   articles = [i for i in news_update.get('posts')]
 
   return render_template('news.html', articles=articles, news_update=news_update)

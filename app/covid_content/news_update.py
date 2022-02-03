@@ -18,12 +18,9 @@ def get_news(publication):
       try:
         temp['title'] = post.title
         temp['link'] = post.link
-        temp['author'] = post.author
         temp['time_published'] = post.published
-        temp['tags'] = [tag.term for tag in post.tags]
-        temp['authors'] = [author.name for author in post.authors]
-        temp['summary'] = post.summary
-        temp['media_thumbnail'] = post.media_content[0]['url']
+        temp['media_thumbnail'] = post.enclosures[0]['url']
+        # temp['summary'] = post.summary 
       except:
         pass
 

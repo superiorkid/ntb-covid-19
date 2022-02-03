@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NTB Covid Trackers</title>
+<title>West Nusa Tenggara Covid Information Center</title>
 
   <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
   <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
@@ -29,10 +29,15 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
-              About
+            <a class="nav-link" href="{{ url_for('main.news') }}">
+              News
             </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            About
+          </a>
+      </li>
     </ul>
 </nav>
 </div>
