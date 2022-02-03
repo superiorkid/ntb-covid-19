@@ -15,7 +15,7 @@ def index():
 @main.route('/news')
 def news():
   news_update = get_news(RSS_FEEDS['indo_gov'])
-  articles = [i for i in news_update.get('posts')]
+  articles = [i for i in news_update.get('posts')[:6]]
 
   return render_template('news.html', articles=articles, news_update=news_update)
 
