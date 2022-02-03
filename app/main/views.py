@@ -19,4 +19,12 @@ def news():
 
   return render_template('news.html', articles=articles, news_update=news_update)
 
-  
+@main.route('/about')
+def about():
+  urls = {
+    'github': 'https://github.com/superiorkid',
+    'api': 'https://corona.ntbprov.go.id/api/data',
+    'rss_feed': 'https://covid19.go.id/feed/berita'
+  }
+
+  return render_template('about.html', urls=urls)
