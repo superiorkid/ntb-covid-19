@@ -10,13 +10,12 @@
   <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
   <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
 
-
 </head>
 <body>
 
   <header style="background: #4C3571;padding:50px 0;">
     <div class="container">
-      <h1 style="color: #fff;">Informasi Covid19 Prov. Nusa Tenggara Barat</h1>
+      <h1 style="color: #fff;">Covid Information Center</h1>
     </div>
   </header>
   
@@ -39,99 +38,12 @@
 </div>
 
 <div class="container">
-  	<div class="p-5 my-4 rounded-3">
-        <h1>Covid-19 / Coronavirus Disease 2019</h1>
-        <p class="lead">adalah penyakit akibat infeksi virus severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). COVID-19 dapat menyebabkan gangguan sistem pernapasan, mulai dari gejala yang ringan seperti flu, hingga infeksi paru-paru, seperti pneumonia.</p>
-        <a href="#">Baca spostelengkapnya...</a>
-    </div>
-
-    <div class="row">
-
-      <!-- Total Kasus -->
-      <div class="col-xl-3 col-sm-6 col-12">
-        <div class="card">
-          <div class="card-content">
-            <div class="card-body">
-              <div class="media d-flex">
-                <div class="media-body text-left">
-                  <h3 class="danger">{{ total_kasus.get('total') }}</h3>
-                  <span>Total Kasus</span>
-                </div>
-                <div class="align-self-center">
-                  <i class="icon-user success font-large-2 float-right"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sembuh -->
-      <div class="col-xl-3 col-sm-6 col-12">
-        <div class="card">
-          <div class="card-content">
-            <div class="card-body">
-              <div class="media d-flex">
-                <div class="media-body text-left">
-                  <h3 class="success">{{ total_kasus.get('sembuh')}}</h3>
-                  <span>Sembuh</span>
-                </div>
-                <div class="align-self-center">
-                  <i class="icon-plus danger font-large-2 float-right"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- meninggal -->
-      <div class="col-xl-3 col-sm-6 col-12">
-        <div class="card">
-          <div class="card-content">
-            <div class="card-body">
-              <div class="media d-flex">
-                <div class="media-body text-left">
-                  <h3 class="warning">{{ total_kasus.get('meninggal') }}</h3>
-                  <span>Meninggal</span>
-                </div>
-                <div class="align-self-center">
-                  <i class="icon-graph warning font-large-2 float-right"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Isolasi -->
-      <div class="col-xl-3 col-sm-6 col-12">
-        <div class="card">
-          <div class="card-content">
-            <div class="card-body">
-              <div class="media d-flex">
-                <div class="media-body text-left">
-                  <h3 class="primary">{{ total_kasus.get('masih_isolasi') }}</h3>
-                  <span>Masih Isolasi</span>
-                </div>
-                <div class="align-self-center">
-                  <i class="icon-support primary font-large-2 float-right"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    
+  
     {% block content %}
       
     {% endblock content %}
     
-    <div class="alert alert-warning justify-content-end" role="alert">
-      <p>Update:  {{ data.get('update_terakhir') }} WITA</p>
-    </div>      
-
+    
     <hr>
     <footer>
         <div class="row">
