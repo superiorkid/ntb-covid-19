@@ -2,7 +2,6 @@ from . import main
 from flask import render_template
 from ..api.covid_data import total_kasus, get_data, kasus_per_kabupaten
 from ..covid_content.news_update import get_news
-import feedparser
 
 RSS_FEEDS = {
   'indo_gov': 'https://covid19.go.id/feed/berita'
