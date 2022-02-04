@@ -29,7 +29,3 @@ def get_news(publication):
     posts_details['posts'] = post_list
     
     return posts_details
-
-  else:
-
-    return None
