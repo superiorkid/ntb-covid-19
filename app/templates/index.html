@@ -5,7 +5,7 @@
 <div class="p-5 my-4 rounded-3">
   <h1>Covid-19 / Coronavirus Disease 2019</h1>
   <p class="lead">adalah penyakit akibat infeksi virus severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). COVID-19 dapat menyebabkan gangguan sistem pernapasan, mulai dari gejala yang ringan seperti flu, hingga infeksi paru-paru, seperti pneumonia.</p>
-  <a href="{{ url_for('main.news') }}">Update Berita Covid-19...</a>
+  <a href="{{ url_for('main.news') }}">Berita Covid-19 Terbaru...</a>
 </div>
 
 <div class="row">
@@ -18,7 +18,7 @@
         <div class="media d-flex">
           <div class="media-body text-left">
             <h3 class="danger">{{ total_kasus.get('total') }}</h3>
-            <span>Cases</span>
+            <span>Kasus</span>
           </div>
           <div class="align-self-center">
             <i class="icon-user success font-large-2 float-right"></i>
@@ -37,7 +37,7 @@
         <div class="media d-flex">
           <div class="media-body text-left">
             <h3 class="success">{{ total_kasus.get('sembuh')}}</h3>
-            <span>Healed</span>
+            <span>Sembuh</span>
           </div>
           <div class="align-self-center">
             <i class="icon-plus danger font-large-2 float-right"></i>
@@ -56,7 +56,7 @@
         <div class="media d-flex">
           <div class="media-body text-left">
             <h3 class="warning">{{ total_kasus.get('meninggal') }}</h3>
-            <span>Die</span>
+            <span>Meninggal</span>
           </div>
           <div class="align-self-center">
             <i class="icon-graph warning font-large-2 float-right"></i>
@@ -75,7 +75,7 @@
         <div class="media d-flex">
           <div class="media-body text-left">
             <h3 class="primary">{{ total_kasus.get('masih_isolasi') }}</h3>
-            <span>Still in Isolation</span>
+            <span>Masih di Isolasi</span>
           </div>
           <div class="align-self-center">
             <i class="icon-support primary font-large-2 float-right"></i>
@@ -89,7 +89,7 @@
 
 <div class="row">
   <div class="col-12 mt-3 mb-1">
-    <h4 class="text-uppercase">District/City Cases</h4>
+    <h4 class="text-uppercase">Kasus per-Kabupaten/Kota</h4>
   </div>
 </div>
 
@@ -97,11 +97,11 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">District/City</th>
-      <th scope="col">Cases</th>
-      <th scope="col">Healed</th>
-      <th scope="col">Die</th>
-      <th scope="col">Still in Isolation</th>
+      <th scope="col">Kabupaten/Kota</th>
+      <th scope="col">Kasus</th>
+      <th scope="col">Sembuh</th>
+      <th scope="col">Meninggal</th>
+      <th scope="col">Masih di Isolasi</th>
     </tr>
   </thead>
   <tbody>
